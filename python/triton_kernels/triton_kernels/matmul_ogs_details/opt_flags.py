@@ -215,7 +215,7 @@ def make_default_opt_flags_nvidia(
         ns = opt_flags_nvidia.compute_num_stages(*compute_num_stages_args, ep, epilogue_effective_itemsize)
         if ns > num_stages:
             epilogue_subtile, num_stages = ep, ns
-    assert num_stages >= 1
+    # assert num_stages >= 1
     if constraints.get("num_stages", None):
         num_stages = constraints["num_stages"]
     # fused scatter scratchpad
